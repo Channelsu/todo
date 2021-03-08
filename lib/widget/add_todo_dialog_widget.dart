@@ -20,7 +20,7 @@ class _AddTodoDialogWidgetState extends State<AddTodoDialogWidget> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text('todoの追加',style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),),
-        SizedBox(height: 8,),
+        SizedBox(height: 12,),
         TodoFormWidget(
           onChangedTitle: (title) => setState(() => this.title = title),
           onChangedDescription: (description) => setState(() => this.description = description),

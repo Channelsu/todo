@@ -24,6 +24,9 @@ class TodoFormWidget extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         buildTitle(),
+        SizedBox(height: 8,),
+        buildDescription(),
+        SizedBox(height: 32,),
         buildButton(),
       ],
     ),
@@ -44,7 +47,17 @@ class TodoFormWidget extends StatelessWidget {
     decoration: InputDecoration(
       border: UnderlineInputBorder(),
       labelText: 'タイトル',
+    ),
+  );
 
+  // 内容入力欄UIを作成するメソッド
+  Widget buildDescription() => TextFormField(
+    maxLines: 5,
+    initialValue: description,
+    onChanged: onChangedDescription,
+    decoration: InputDecoration(
+      border: UnderlineInputBorder(),
+      labelText: '内容',
     ),
   );
 
