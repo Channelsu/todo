@@ -65,7 +65,7 @@ class TodoFormWidget extends StatelessWidget {
   Widget buildButton() => SizedBox(
     width: double.infinity,
     child: RaisedButton(
-      color: Colors.black,
+      color: Colors.teal,
       textColor: Colors.white,
       onPressed: onSavedTodo,
       child: Text('追加'),
