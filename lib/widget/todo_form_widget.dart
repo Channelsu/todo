@@ -23,11 +23,32 @@ class TodoFormWidget extends StatelessWidget {
     child: Column(
       mainAxisSize: MainAxisSize.min,
       children: [
+        buildTitle(),
         buildButton(),
       ],
     ),
   );
 
+
+  // タイトル入力欄UIを作成するメソッド
+  Widget buildTitle() => TextFormField(
+    maxLines: 1,
+    initialValue: title,
+    onChanged: onChangedTitle,
+    validator: (title) {
+      if(title.isEmpty) {
+        return '必須入力です';
+      }
+      return null;
+    },
+    decoration: InputDecoration(
+      border: UnderlineInputBorder(),
+      labelText: 'タイトル',
+
+    ),
+  );
+
+  // ボタンUIを作成するメソッド
   Widget buildButton() => SizedBox(
     width: double.infinity,
     child: RaisedButton(
