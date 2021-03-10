@@ -15,7 +15,13 @@ class TodoWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Row(
     children: [
-      
+      Checkbox(
+        activeColor: Theme.of(context).primaryColor,
+        checkColor: Colors.white,
+        value: todo.isDone,
+        onChanged: (_) {},
+      ),
+      SizedBox(height: 20,),
     ],
   );
 }
