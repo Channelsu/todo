@@ -17,6 +17,9 @@ dependencies:
   # 状態管理
   provider: ^4.3.2+2
 
+  # 横スワイププラグイン
+  flutter_slidable: ^0.5.7
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
