@@ -8,11 +8,15 @@ import 'package:todo/widget/todo_widget.dart';
 class TodoListWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return TodoWidget(
-      todo: Todo(
-        title: '買い物',
-        createdTime: DateTime.now(),
-      ),
+    final provider = Provider.of<TodosProvider>(context);
+    final todos = provider.todos;
+
+    return ListView.builder(
+      itemCount: todos.length,
+      itemBuilder: (context, index) {
+        final todo = todos[index];
+        return TodoWidget(todo: todo,);
+      },
     );
   }
 }
