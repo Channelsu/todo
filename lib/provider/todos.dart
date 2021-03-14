@@ -21,6 +21,7 @@ class TodosProvider extends ChangeNotifier {
 
   List<Todo> get todos => _todos.where((todo) => todo.isDone == false).toList();
 
+  // 引数に指定されたtodoを_todosリストに追加
   void addTodo(Todo todo) {
     // リストに新規追加のtodo追加
     _todos.add(todo);
