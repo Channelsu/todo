@@ -27,4 +27,10 @@ class TodosProvider extends ChangeNotifier {
     _todos.add(todo);
     notifyListeners();
   }
+
+  // 引数に指定されたtodoを_todosリストから削除
+  void removeTodo(Todo todo) {
+    _todos.remove(todo);
+    notifyListeners();
+  }  
 }
