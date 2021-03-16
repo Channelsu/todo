@@ -32,5 +32,12 @@ class TodosProvider extends ChangeNotifier {
   void removeTodo(Todo todo) {
     _todos.remove(todo);
     notifyListeners();
-  }  
+  } 
+
+  // 
+  bool toggleTodoStatus(Todo todo) {
+    todo.isDone = !todo.isDone;
+    notifyListeners();
+    return todo.isDone;
+  } 
 }
