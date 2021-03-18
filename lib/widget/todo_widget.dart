@@ -1,4 +1,6 @@
 
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:provider/provider.dart';
@@ -25,7 +27,7 @@ class TodoWidget extends StatelessWidget {
       actions: [
         IconSlideAction(
           color: Colors.green,
-          onTap: () {},
+          onTap: () => editTodo(context, todo),
           caption: 'Edit',
           icon: Icons.edit,
         )
@@ -91,4 +93,8 @@ class TodoWidget extends StatelessWidget {
 
     Utils.showSnackBar(context, '削除しました');
   }
+
+  void editTodo(BuildContext context, Todo todo) => Navigator.of(context).push(
+
+  );
 }
