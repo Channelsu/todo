@@ -1,10 +1,8 @@
-
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:provider/provider.dart';
 import 'package:todo/model/todo.dart';
+import 'package:todo/page/edit_todo_page.dart';
 import 'package:todo/provider/todos.dart';
 
 import '../utils.dart';
@@ -95,6 +93,8 @@ class TodoWidget extends StatelessWidget {
   }
 
   void editTodo(BuildContext context, Todo todo) => Navigator.of(context).push(
-
+    MaterialPageRoute(
+      builder: (context) => EditTodoPage(todo: todo),
+    ),
   );
 }
