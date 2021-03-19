@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:todo/model/todo.dart';
+import 'package:todo/widget/todo_form_widget.dart';
 
 class EditTodoPage extends StatefulWidget {
   final Todo todo;
@@ -27,6 +28,12 @@ class _EditTodoPageState extends State<EditTodoPage> {
     appBar: AppBar(
       title: Text('編集'),
     ),
-    // body: ,
+    body: TodoFormWidget(
+      title: title,
+      description: description,
+      onChangedTitle: (title) => setState(() => this.title = title),
+      onChangedDescription: (description) => setState(() => this.description = description),
+      onSavedTodo: () {},
+    ),
   );
 }
