@@ -13,9 +13,20 @@ class EditTodoPage extends StatefulWidget {
 class _EditTodoPageState extends State<EditTodoPage> {
   String title;
   String description;
+  
+  @override
+  void initState() { 
+    super.initState();
+    
+    title = widget.todo.title;
+    description = widget.todo.description;
+  }
 
   @override
   Widget build(BuildContext context) => Scaffold(
-
+    appBar: AppBar(
+      title: Text('編集'),
+    ),
+    // body: ,
   );
 }
