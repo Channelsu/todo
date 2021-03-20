@@ -68,7 +68,7 @@ class TodoFormWidget extends StatelessWidget {
       color: Colors.teal,
       textColor: Colors.white,
       onPressed: onSavedTodo,
-      child: Text('追加'),
+      child: Text('保存'),
     ),
   );
 
