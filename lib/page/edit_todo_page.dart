@@ -28,12 +28,15 @@ class _EditTodoPageState extends State<EditTodoPage> {
     appBar: AppBar(
       title: Text('編集'),
     ),
-    body: TodoFormWidget(
-      title: title,
-      description: description,
-      onChangedTitle: (title) => setState(() => this.title = title),
-      onChangedDescription: (description) => setState(() => this.description = description),
-      onSavedTodo: () {},
+    body: Padding(
+      padding: const EdgeInsets.all(16),
+      child: TodoFormWidget(
+        title: title,
+        description: description,
+        onChangedTitle: (title) => setState(() => this.title = title),
+        onChangedDescription: (description) => setState(() => this.description = description),
+        onSavedTodo: () {},
+      ),
     ),
   );
 }
