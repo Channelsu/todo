@@ -35,10 +35,17 @@ class TodosProvider extends ChangeNotifier {
     notifyListeners();
   } 
 
-  // 
+  // Todoの完了/未完了を切り替える処理（チェックボックス）
   bool toggleTodoStatus(Todo todo) {
     todo.isDone = !todo.isDone;
     notifyListeners();
     return todo.isDone;
   } 
+
+  // 引数で受けたtodoを引数で受けたtitleとdescriotionに更新する
+  void updateTodo(Todo todo, String title, String description) {
+    todo.title = title;
+    todo.description = description;
+    notifyListeners();
+  }
 }
