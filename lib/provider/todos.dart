@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:todo/api/firebase_api.dart';
 import 'package:todo/model/todo.dart';
 
 class TodosProvider extends ChangeNotifier {
@@ -23,11 +24,12 @@ class TodosProvider extends ChangeNotifier {
   List<Todo> get todosCompleted => _todos.where((todo) => todo.isDone == true).toList();
 
   // 引数に指定されたtodoを_todosリストに追加
-  void addTodo(Todo todo) {
-    // リストに新規追加のtodo追加
-    _todos.add(todo);
-    notifyListeners();
-  }
+  // void addTodo(Todo todo) {
+  //   // リストに新規追加のtodo追加
+  //   _todos.add(todo);
+  //   notifyListeners();
+  // }
+  void addTodo(Todo todo) => FirebaseApi.createTodo(todo);
 
   // 引数に指定されたtodoを_todosリストから削除
   void removeTodo(Todo todo) {
