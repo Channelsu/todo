@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:todo/page/home_page.dart';
 import 'package:todo/provider/todos.dart';
 
-void main() async {
+Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   runApp(MyApp());
