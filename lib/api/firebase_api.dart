@@ -9,4 +9,10 @@ class FirebaseApi {
     await docTodo.set(todo.toJson());
     return docTodo.id;
   }
+
+  static Stream<List<Todo>> readTodo() => FirebaseFirestore.instance
+    .collection('todo')
+    .orderBy(TodoField.createdTime, descending: true)
+    .snapshots()
+    .transform(Utils.transformer(Todo.fromJson));
 }
