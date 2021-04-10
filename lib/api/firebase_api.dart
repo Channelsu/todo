@@ -10,7 +10,7 @@ class FirebaseApi {
     return docTodo.id;
   }
 
-  static Stream<List<Todo>> readTodo() => FirebaseFirestore.instance
+  static Stream<List<Todo>> readTodos() => FirebaseFirestore.instance
     .collection('todo')
     .orderBy(TodoField.createdTime, descending: true)
     .snapshots()
