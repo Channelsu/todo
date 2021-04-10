@@ -14,6 +14,12 @@ class TodosProvider extends ChangeNotifier {
   List<Todo> get todos => _todos.where((todo) => todo.isDone == false).toList();
   List<Todo> get todosCompleted => _todos.where((todo) => todo.isDone == true).toList();
 
+  void setTodos(List<Todo> todos) =>
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _todos = todos;
+      notifyListeners();
+    });
+
   // 引数に指定されたtodoを_todosリストに追加
   // void addTodo(Todo todo) {
   //   // リストに新規追加のtodo追加

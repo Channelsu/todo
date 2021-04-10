@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:todo/api/firebase_api.dart';
 import 'package:todo/main.dart';
+import 'package:todo/model/todo.dart';
+import 'package:todo/provider/todos.dart';
 import 'package:todo/widget/add_todo_dialog_widget.dart';
 import 'package:todo/widget/completed_list_widget.dart';
 import 'package:todo/widget/todo_list_widget.dart';
@@ -42,7 +46,19 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
-      body: tabs[selectedIndex],
+      body: StreamBuilder<List<Todo>>(
+        stream: FirebaseApi.readTodos(),
+        builder: (context, snapshot) {
+
+
+          final todos = snapshot.data;
+          final provider = Provider.of<TodosProvider>(context);
+          provider.setTodos(todos);
+          return tabs[selectedIndex];
+
+          
+        }
+      ),
       floatingActionButton: FloatingActionButton(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20),
