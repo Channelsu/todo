@@ -51,10 +51,12 @@ class _HomePageState extends State<HomePage> {
         builder: (context, snapshot) {
 
 
+
           final todos = snapshot.data;
           final provider = Provider.of<TodosProvider>(context);
           provider.setTodos(todos);
           return tabs[selectedIndex];
+
 
           
         }
